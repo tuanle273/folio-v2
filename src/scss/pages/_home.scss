@@ -303,7 +303,7 @@ body {
 
         @media (any-pointer: fine) {
           &:hover {
-            color: $col-gray;
+            color: $col-white;
           }
         }
       }
@@ -467,7 +467,7 @@ body {
 
           @media (any-pointer: fine) {
             &:hover {
-              color: $col-gray;
+              color: $col-white;
             }
           }
         }
@@ -567,7 +567,7 @@ body {
               display: inline-block;
               content: attr(data-content);
               white-space: nowrap;
-              color: $col-gray;
+              color: $col-white;
               transform: translateY(-100%);
               transition: transform 275ms ease;
             }
@@ -620,7 +620,7 @@ body {
         border: 0;
         font-weight: 500;
         cursor: pointer;
-        color: $col-gray;
+        color: $col-white;
         padding: 0;
         margin-bottom: 1.6rem;
 
