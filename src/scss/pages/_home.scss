@@ -9,6 +9,7 @@
 }
 body {
   background-color: #067CBD;
+    // cursor: url('https://visualpharm.com/assets/930/Potato-595b40b65ba036ed117d31c3.svg'), auto;
   
 }
 .home {
@@ -630,7 +631,7 @@ body {
 
         @media (any-pointer: fine) {
           &:hover {
-            color: $col-gray;
+            color: $col-orange;
           }
         }
 
@@ -784,3 +785,4 @@ body {
     }
   }
 }
+
