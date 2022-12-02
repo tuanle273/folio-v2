@@ -426,8 +426,11 @@
 .card .image{
    float: left;
     width: 360px;
-    height: 600px;
+    height: 470px;
+    
+    
 }
+
 
 .card .details .center {
   padding: 10px;
@@ -435,9 +438,11 @@
   
 }
 .card2 .image{
-   float: left;
+   float: right;
     width: 360px;
-    height: 600px;
+    height: 470px;
+    margin-right: 280px;
+  
 }
 
 .card2 .details .center {
@@ -445,7 +450,6 @@
   text-align: right;
   
 }
-
 
 
 
