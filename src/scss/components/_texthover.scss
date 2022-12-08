@@ -1,12 +1,12 @@
 .home__projects__project {
-  color: $col-boulder;
+  color: $col-white;
 
   @media (any-pointer: fine) {
     &:hover {
       .label__inner {
         p {
           &:last-of-type {
-            color: $col-gray;
+            color: $col-white;
           }
         }
       }
@@ -83,7 +83,7 @@
           &::before {
             background: $col-orange;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+           
           }
         }
       }
@@ -104,7 +104,7 @@
 
     .title__main {
       position: relative;
-
+      color: $col-white;
       @include media("<=phone") {
         &.right {
           text-align: right;
@@ -156,6 +156,7 @@
 
     @include media(">tablet") {
       white-space: nowrap;
+   
     }
     text-transform: uppercase;
     padding-top: 6.4rem;
