@@ -331,7 +331,7 @@
 }
 .el:nth-child(2) .el__bg:before {
   transition-delay: 0.1s;
-  background-image: url("https://images.unsplash.com/photo-1556005693-00fff02f134c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80");
+  background-image: url("https://i.ibb.co/Xp5mMNx/Artboard-1-8-2.png");
 }
 .el:nth-child(3) {
   transform: translate3d(210.4166666667%, 0, 0);
@@ -423,34 +423,85 @@
   right: 5px;
 }
 
-.card .image{
-   float: left;
-    width: 360px;
-    height: 470px;
+
+
+
+img {
+  max-width: 100%;
+  max-height: 90%;
+  border-radius: 5%;
+}
+
+.clear {
+  clear: both;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+  .container:after {
+    content: "";
+    clear: both;
+    width: 100%;
+  }
+
+  .col4 {
+    width: 300px;
+    float: left;
+    margin: 0 10px;
+  }
+
+  .image {
+    text-align: center;
     
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  .container {
+    width: 96%;
+    margin: 0 2%;
+  }
+
+  .col4 {
+    clear: both;
+    padding: 20px 0;
+    border-bottom: 1px solid #CCC;
+  }
+  .col4:after {
+    content: "";
+    clear: both;
+    width: 100%;
+  }
+
+  .image {
+    float: left;
+    width: 40%;
     
-}
+  }
 
-
-.card .details .center {
-  padding: 10px;
-  text-align: right;
-  
+  .copy {
+    float: right;
+    width: 56%;
+  }
 }
-.card2 .image{
-   float: right;
-    width: 360px;
-    height: 470px;
-    margin-right: 280px;
-  
-}
+@media (max-width: 599px) {
+  .container {
+    width: 96%;
+    margin: 0 2%;
+  }
 
-.card2 .details .center {
-  padding: 10px;
-  text-align: right;
-  
-}
+  .col4 {
+    padding: 10px 0;
+    border-bottom: 1px solid #CCC;
+  }
 
+  .image, .copy {
+    text-align: center;
+    
+  }
+}
 
 
 
