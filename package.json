@@ -4,7 +4,8 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "dev": "rimraf ./public && rimraf ./.cache && parcel src/index.html -d public -p 3000",
+    "start": "parcel src/index.html",
+    "dev": "rimraf ./public && rimraf ./.cache && parcel src/index.html -d public -p",
     "build": "parcel build src/index.html -d dist --public-url ./"
   },
   "keywords": [],
@@ -21,6 +22,7 @@
   "dependencies": {
     "gsap": "^3.7.0",
     "locomotive-scroll": "^4.1.1",
+    "react-scripts": "^5.0.1",
     "regenerator-runtime": "^0.13.7"
   }
 }
