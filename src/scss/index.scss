@@ -746,3 +746,72 @@ li .normal svg path {
     width: 100%;
   }
 }
+
+.marquee {
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  overflow: hidden;
+}
+
+.big-title {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 10vw;
+  letter-spacing: -0.01em;
+  margin: 0;
+  display: block;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.big-title.front {
+  z-index: 50;
+  color: wheat;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+span {
+  display: inline-block;
+}
+
+.moving {
+  -webkit-animation: animLeft 20s linear infinite;
+  animation: animLeft 8s linear infinite;
+}
+$bg-img: url("/product/Artboard1-81.png") no-repeat;
+.clipping-container {
+  position: relative;
+  background: $bg-img;
+  background-size: cover;
+  background-position: center center;
+  z-index: 20;
+  width: 60vw;
+  height: 40vw;
+  overflow: hidden;
+}
+
+@-webkit-keyframes animLeft {
+  0% {
+    transform: translate(-20%, -50%);
+  }
+  100% {
+    transform: translate(-70%, -50%);
+  }
+}
+
+@keyframes animLeft {
+  0% {
+    transform: translate(-20%, -50%);
+  }
+  100% {
+    transform: translate(-70%, -50%);
+  }
+}
