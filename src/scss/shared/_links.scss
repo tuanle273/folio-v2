@@ -2,7 +2,7 @@
   a {
     color: black;
     transition: color 0.3s;
-    font-weight: bold;
+    font-weight: bold; 
 
     @media (any-pointer: fine) {
       &:hover {
