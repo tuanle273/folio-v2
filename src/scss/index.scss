@@ -311,6 +311,10 @@ li .normal svg path {
   position: relative;
   overflow: hidden;
   width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1504197885-609741792ce7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80);
+  background-size: 100% 100%;
+  filter: blur(0px) saturate(2) brightness(1); /* KEY */
+  border-radius: 4px;
   aspect-ratio: 500/333;
 }
 
@@ -378,16 +382,21 @@ li .normal svg path {
 .overlay__row:last-child {
   transform-origin: 50% 100%;
 }
+
 .content-img {
   display: flex;
+
   flex-wrap: wrap;
   margin-top: 60px;
   padding: 0 30px;
 }
+
 .wrapper {
+  flex: 1 0 21%;
   width: 33.3%;
   height: 100%;
   padding: 10px;
+  filter: blur(0px) brightness(1) saturate(1);
 }
 
 .name {
@@ -581,7 +590,7 @@ li .normal svg path {
 
 .blury-card {
   .frame {
-    width: calc(100% - 40px);
+    width: calc(100% - 100px);
     height: calc(100% - 40px);
     opacity: 0;
     transition: all 0.3s ease-in-out;
@@ -619,6 +628,7 @@ li .normal svg path {
 
   img {
     z-index: 2;
+    width: 100%;
   }
 
   &:hover {
@@ -629,7 +639,7 @@ li .normal svg path {
     }
 
     img {
-      opacity: 0.7;
+      opacity: 0.5;
     }
 
     &:before {
@@ -735,4 +745,143 @@ li .normal svg path {
   .wrapper {
     width: 100%;
   }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  padding: 12rem 0;
+  counter-reset: figure;
+}
+
+.item {
+  margin: 10vh auto;
+  max-width: 100%;
+  position: relative;
+  will-change: transform;
+}
+
+.item::before {
+  counter-increment: figure;
+  content: counter(figure, decimal-leading-zero);
+  position: absolute;
+  font-family: paralucent, sans-serif;
+  font-size: 10rem;
+  color: var(--color-deco);
+  bottom: calc(100% - 3rem);
+}
+
+.item:nth-child(even)::before {
+  right: 0;
+}
+
+.item__img-wrap {
+  --aspect-ratio: 1/1.5;
+  overflow: hidden;
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: calc(100% / (var(--aspect-ratio)));
+  max-width: calc(100% - 2rem);
+  will-change: transform;
+}
+
+.item:first-child .item__img-wrap {
+  --aspect-ratio: 8/10;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/1.jpg);
+}
+
+.item:nth-child(2) .item__img-wrap {
+  width: 1000px;
+  --aspect-ratio: 120/76;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/2.jpg);
+}
+
+.item:nth-child(3) .item__img-wrap {
+  --aspect-ratio: 60/75;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/3.jpg);
+}
+
+.item:nth-child(4) .item__img-wrap {
+  width: 800px;
+  --aspect-ratio: 900/505;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/4.jpg);
+}
+
+.item:nth-child(5) .item__img-wrap {
+  --aspect-ratio: 6/8;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/5.jpg);
+}
+
+.item:nth-child(6) .item__img-wrap {
+  width: calc(100vw - 2rem);
+  --aspect-ratio: 1500/844;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/6.jpg);
+}
+
+.item:nth-child(7) .item__img-wrap {
+  width: 900px;
+  --aspect-ratio: 1000/749;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/7.jpg);
+}
+
+.item:nth-child(8) .item__img-wrap {
+  width: 900px;
+  --aspect-ratio: 1000/562;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/8.jpg);
+}
+
+.item:nth-child(9) .item__img-wrap {
+  --aspect-ratio: 60/75;
+  --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/9.jpg);
+}
+
+.item__img {
+  --overflow: 40px;
+  height: calc(100% + (2 * var(--overflow)));
+  top: calc(-1 * var(--overflow));
+  width: 100%;
+  position: absolute;
+  background-image: var(--image);
+  background-size: cover;
+  background-position: 50% 0%;
+  will-change: transform;
+}
+
+.item__img--t1 {
+  --overflow: 60px;
+}
+
+.item__img--t2 {
+  --overflow: 80px;
+}
+
+.item__img--t3 {
+  --overflow: 120px;
+}
+
+.item__caption {
+  padding: 2rem 1rem;
+}
+
+.item__caption-title {
+  font-family: paralucent, sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.item__caption-copy {
+  margin: 0;
+}
+
+.item__caption-copy::before {
+  content: "__";
+  line-height: 1;
+  color: var(--color-link);
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0 0 1rem;
+  display: block;
 }
