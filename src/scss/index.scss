@@ -14,3 +14,18 @@
 @import "components/link";
 
 @import "pages/home";
+
+#curosr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.oval {
+  height: 40px;
+  width: 40px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  will-change: transform;
+}

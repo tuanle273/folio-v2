@@ -1,12 +1,12 @@
 .home__projects__project {
-  color: $col-boulder;
+  color: $col-white;
 
   @media (any-pointer: fine) {
     &:hover {
       .label__inner {
         p {
           &:last-of-type {
-            color: $col-gray;
+            color: $col-white;
           }
         }
       }
@@ -81,7 +81,7 @@
 
         .slide-up {
           &::before {
-            background: $col-orange;
+            background: #f0515b;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
@@ -126,7 +126,7 @@
         &::before {
           display: inline-block;
           content: attr(data-content);
-          color: $col-orange;
+          color: #f0515b;
           transform: translateY(-100%);
           transition: transform 275ms ease;
 

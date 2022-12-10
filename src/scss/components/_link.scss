@@ -1,20 +1,21 @@
 .c-button {
   display: inline-block;
   background: transparent;
-  color: $col-gray;
+  color: $col-white;
   font-size: 16px;
   text-transform: uppercase;
   padding: 5px 8px;
-  border: 2px solid $col-boulder;
+  border: 2px solid $col-white;
   border-radius: 45px;
   cursor: pointer;
   transition: all 0.3s;
 
+  
   &:hover {
     @media (any-pointer: fine) {
-      border-color: $col-orange;
-      color: $col-black;
-      background: $col-orange;
+      border-color: #f0515b;
+      color: $col-white;
+      background: #f0515b;
       font-weight: 500;
     }
   }
