@@ -12420,6 +12420,72 @@ var Item = /*#__PURE__*/function () {
 nodes.forEach(function (node) {
   return new Item(node);
 });
+
+// find the top of each section
+var section1 = $("#section1").offset().top;
+var section2 = $("#section2").offset().top;
+var section3 = $("#section3").offset().top;
+
+// number of pixels before the section to change image
+var scrollOffset = 300;
+
+// run this function when the window scrolls
+$(window).scroll(function () {
+  // get the window height on scroll
+  var scroll = $(window).scrollTop() + scrollOffset;
+
+  // if scroll hits the top of section 1
+  if (scroll < 500) {
+    $(".grid-image img").attr("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/0st9yhngses-benjamin-child.jpg");
+  }
+
+  // if scroll hits the top of section 2
+  if (scroll > section2) {
+    $(".grid-image img").attr("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/2fgvaqx-fxs-oskar-krawczyk.jpg");
+  }
+
+  // if scroll hits the top of section 3
+  if (scroll > section3) {
+    $(".grid-image img").attr("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/Great_Wave_off_Kanagawa2_cr.jpg");
+  }
+});
+popup = {
+  init: function init() {
+    $("figure").click(function () {
+      popup.open($(this));
+    });
+    $(document).on("click", ".popup img", function () {
+      return false;
+    }).on("click", ".popup", function () {
+      popup.close();
+    });
+  },
+  open: function open($figure) {
+    $(".gallery").addClass("pop");
+    $popup = $('<div class="popup" />').appendTo($("body"));
+    $fig = $figure.clone().appendTo($(".popup"));
+    $bg = $('<div class="bg" />').appendTo($(".popup"));
+    $close = $('<div class="close"><svg><use xlink:href="#close"></use></svg></div>').appendTo($fig);
+    $shadow = $('<div class="shadow" />').appendTo($fig);
+    src = $("img", $fig).attr("src");
+    $shadow.css({
+      backgroundImage: "url(" + src + ")"
+    });
+    $bg.css({
+      backgroundImage: "url(" + src + ")"
+    });
+    setTimeout(function () {
+      $(".popup").addClass("pop");
+    }, 10);
+  },
+  close: function close() {
+    $(".gallery, .popup").removeClass("pop");
+    setTimeout(function () {
+      $(".popup").remove();
+    }, 100);
+  }
+};
+popup.init();
 },{"gsap":"../node_modules/gsap/index.js","gsap/ScrollTrigger":"../node_modules/gsap/ScrollTrigger.js","locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","lodash/each":"../node_modules/lodash/each.js","./utils/index":"js/utils/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -12445,7 +12511,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52167" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61339" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

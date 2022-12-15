@@ -9,19 +9,23 @@
 }
 body {
   background-color: #006ab4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: auto;
   cursor: none;
   // cursor: url('https://visualpharm.com/assets/930/Potato-595b40b65ba036ed117d31c3.svg'), auto;
 }
 .home {
-  padding: 2.4rem 0;
+  padding: 2.3rem 0;
   visibility: hidden;
   &__nav {
+    padding: 5px 60px;
     @extend %padding-home;
-    margin-bottom: 6.4rem;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: space-between;
     @extend %description-12;
-    line-height: 1.4;
+    line-height: 1.5;
 
     .hide-mobile {
       @include media("<=phone") {
@@ -355,7 +359,7 @@ body {
     @extend %links;
 
     justify-content: space-between;
-    max-width: 113rem;
+    max-width: 117rem;
     margin-left: auto;
     margin-right: auto;
     padding-top: 9.6rem;
@@ -385,34 +389,34 @@ body {
 
       &__item {
         @extend %description-16;
-        padding: 16px 0;
-        border-top: 2px solid $col-white;
+        padding: 30px 55px;
+        border-top: 3px solid $col-white;
         position: relative;
-        transition: color 0.2s;
+        transition: color 0.1s;
 
-        // &::after {
-        //   background: $col-orange;
-        //   content: "";
-        //   display: block;
-        //   height: 100%;
-        //   left: 0;
-        //   position: absolute;
-        //   top: 0;
-        //   transform: scaleY(0);
-        //   transform-origin: top;
-        //   transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        //   width: 100%;
-        //   z-index: -1;
-        // }
+        &::after {
+          background: $col-orange;
+          content: "";
+          display: block;
+          height: 50%;
+          left: 0;
+          position: fixed;
+          top: 0;
+          transform: scaleY(0);
+          transform-origin: top;
+          transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+          width: 100%;
+          z-index: -1;
+        }
 
-        // &:hover {
-        //   color: $col-black;
+        &:hover {
+          color: $col-black;
 
-        //   &::after {
-        //     transform: scaleY(1);
-        //     transform-origin: bottom;
-        //   }
-        // }
+          &::after {
+            transform: scaleY(1);
+            transform-origin: bottom;
+          }
+        }
       }
     }
 

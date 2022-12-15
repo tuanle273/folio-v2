@@ -1,6 +1,7 @@
 html {
   font-size: calc(100vw / 1440 * 10);
   overscroll-behavior: none;
+  scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
