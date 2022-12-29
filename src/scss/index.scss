@@ -750,3 +750,105 @@ li .normal svg path {
     width: 100%;
   }
 }
+@mixin default($margin, $padding, $box-sizing) {
+  margin: $margin;
+  padding: $padding;
+  box-sizing: $box-sizing;
+}
+
+@mixin dimension($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin pos(
+  $position: absolute,
+  $margin: auto,
+  $top: auto,
+  $bottom: auto,
+  $left: auto,
+  $right: auto
+) {
+  position: $position;
+  margin: $margin;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+
+$color: cornsilk;
+
+* {
+  @include default(0, 0, border-box);
+}
+
+body,
+html {
+  @include dimension(100%, 100%);
+}
+
+.container {
+  @include dimension(100%, 100%);
+  position: relative;
+  background: #355c7d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #c06c84,
+    #6c5b7b,
+    #355c7d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #c06c84,
+    #6c5b7b,
+    #355c7d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden;
+  img {
+    @include dimension(100%, 100%);
+    object-fit: cover;
+    @include pos($top: 0, $bottom: 0, $left: 0, $right: 0);
+    animation: fade 1s;
+  }
+  .arrow {
+    z-index: 10;
+    @include pos($top: 0, $bottom: 0);
+    @include dimension(1.5rem, 1.5rem);
+    font-size: 1.5rem;
+    color: $color;
+    opacity: 0.5;
+    transition: opacity 1s;
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+  .arrow-left {
+    left: 2%;
+  }
+  .arrow-right {
+    right: 2%;
+  }
+  .dots {
+    @include pos($left: 0, $right: 0, $bottom: 2%);
+    @include dimension(7rem);
+    z-index: 5;
+    .dot {
+      @include dimension(2rem, 2rem);
+      display: inline-flex;
+      align-content: center;
+      justify-content: center;
+      color: $color;
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
