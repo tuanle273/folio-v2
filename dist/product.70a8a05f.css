@@ -155,7 +155,7 @@ a {
   font-display: swap;
 }
 html {
-  font-size: 0.6944444444vw;
+  font-size: calc(100vw / 1440 * 10);
   overscroll-behavior: none;
   scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
@@ -163,12 +163,12 @@ html {
 }
 @media (max-width: 550px) {
   html {
-    font-size: 1.8181818182vw;
+    font-size: calc(100vw / 550 * 10);
   }
 }
 @media (max-width: 375px) {
   html {
-    font-size: 2.6666666667vw;
+    font-size: calc(100vw / 375 * 10);
   }
 }
 
