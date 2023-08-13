@@ -15,8 +15,6 @@
 
 @import "pages/home";
 
-
-
 #curosr {
   position: fixed;
   top: 28px;
@@ -286,7 +284,7 @@ li .normal svg path {
 
 .content {
   grid-area: content;
-  max-width: 400px;
+  max-width: 200px;
 }
 
 @media screen and (min-width: 53em) {

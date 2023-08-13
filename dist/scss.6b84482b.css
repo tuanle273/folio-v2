@@ -1473,7 +1473,7 @@ li .normal svg path {
 
 .content {
   grid-area: content;
-  max-width: 400px;
+  max-width: 200px;
 }
 
 @media screen and (min-width: 53em) {
